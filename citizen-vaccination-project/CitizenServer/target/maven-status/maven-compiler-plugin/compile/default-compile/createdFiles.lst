@@ -1,0 +1,4 @@
+com/example/CitizenServer/CitizenServerApplication.class
+com/example/CitizenServer/Entity/Citizen.class
+com/example/CitizenServer/Controller/CitizenController.class
+com/example/CitizenServer/repositories/CitizenRepo.class

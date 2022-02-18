@@ -1,0 +1,6 @@
+com/example/VaccinationService/Model/Citizen.class
+com/example/VaccinationService/VaccinationServiceApplication.class
+com/example/VaccinationService/repositories/VaccinationRepo.class
+com/example/VaccinationService/Entity/VaccinationCenter.class
+com/example/VaccinationService/Controller/VaccinationController.class
+com/example/VaccinationService/Model/RequiredResponse.class
