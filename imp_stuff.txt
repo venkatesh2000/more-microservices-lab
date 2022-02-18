@@ -1,0 +1,52 @@
+#Installation steps for apache, mysql and phpmyadmin:
+sudo apt install tasksel
+sudo tasksel install lamp-server
+
+add 'ServerName localhost' in '/etc/apache2/apache2.conf'
+sudo systemctl restart apache2
+sudo systemctl status apache2.service
+
+sudo mysql -u root
+
+sudo apt update && sudo apt upgrade
+sudo apt install phpmyadmin php-mbstring php-gettext
+
+add 'Include /etc/phpmyadmin/apache.conf' in '/etc/apache2/apache2.conf'
+
+sudo mysql -u root
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost';
+FLUSH PRIVILEGES;
+EXIT
+
+
+# To give permissions to execute mvnw file:
+chmod 777 mvnw
+
+
+# Make sure to change Java version to 1.8 and not 11 in 'pom.xml' file
+
+
+# Make sure to change username and password for phpmyadmin/mysql access in 'application.properties' file
+
+
+# To run any microservice:
+mvnw spring-boot:run
+
+
+# Main services dependencies:
+- Spring Web
+- Spring JPA
+- Lombox
+- MySQL Driver
+- Eureka Discovey Client
+
+
+# Eureka service dependencies:
+- Eureka Server
+
+
+# Gateway dependencies:
+- Actuator
+- gateway
+- spring web
+- Eureka Discovey Client
