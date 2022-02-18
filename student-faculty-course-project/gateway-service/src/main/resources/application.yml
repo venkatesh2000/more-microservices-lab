@@ -1,0 +1,28 @@
+server:
+  port: 3004
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+      - id: studentModule
+        uri: http://localhost:3001/
+        predicates:
+        - Path=/students/**
+      - id: facultyModule
+        uri: http://localhost:3002/
+        predicates:
+        - Path=/faculties/**
+      - id: courseModule
+        uri: http://localhost:3003/
+        predicates:
+        - Path=/courses/**
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3000/eureka
+  registerWithEureka:
+       - true
+  fetchRegistry:
+       - true
